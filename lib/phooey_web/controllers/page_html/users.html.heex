@@ -1,0 +1,17 @@
+<h1>Users</h1>
+
+<ul class="list-inside">
+  <%= for user <- @users do %>
+    <li>
+      <span><%= user.id %>: <%= user.name %> - <%= user.email %></span>
+
+      <ul class="ml-4 list-inside">
+        <%= for post <- user.posts do %>
+          <li>
+            <%= post.id %>: <%= post.title %> - <%= post.body %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
